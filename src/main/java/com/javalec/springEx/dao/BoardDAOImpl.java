@@ -20,7 +20,7 @@ public class BoardDAOImpl implements BoardDAO {
 	public BoardDAOImpl() {
 		try {
 			Context context = new InitialContext();
-			dataSource = (DataSource) context.lookup("java:comp/enc/jdbc/Oracle11g");
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}

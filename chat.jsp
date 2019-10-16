@@ -90,12 +90,22 @@
 	}
 
 	function appendMessage(msg){
+		
 		 if(msg == ''){
 			 return false;
 		 }else{
-
-		 var t = getTimeStamp();
-		 $("#message").append("<div class='col-12 row' style = 'height : auto; margin-top : 5px;'><div class='col-2' style = 'float:left; padding-right:0px; padding-left : 0px;'><img id='' class='' src='' style = 'width:50px; height:50px; '><div style='font-size:9px; clear:both;'>${login.mem_nick}</div></div><div class = 'col-10' style = 'overflow : y ; margin-top : 7px; float:right;'><div class = 'col-12' style = ' background-color:#ACF3FF; padding : 10px 5px; float:left; border-radius:10px;'><span style = 'font-size : 12px;'>"+msg+"</span></div><div col-12 style = 'font-size:9px; text-align:right; float:right;'><span style ='float:right; font-size:9px; text-align:right;' >"+t+"</span></div></div></div>")
+		var t = getTimeStamp();
+		var strBuffer="";
+		strBuffer+="<div class='col-12 row' style = 'height : auto; margin-top : 5px;'>";
+		strBuffer+="<div class='col-2' style = 'float:left; padding-right:0px; padding-left : 0px;'>";
+		strBuffer+="<img id='' class='' src='' style = 'width:50px; height:50px; '>";
+		strBuffer+="<div style='font-size:9px; clear:both;'>${login.mem_nick}</div></div>";
+		strBuffer+="<div class = 'col-10' style = 'overflow : y ; margin-top : 7px; float:right;'>";
+		strBuffer+="<div class = 'my-bubble bubble'>"+msg+"</div>";
+		strBuffer+="<div col-12 style = 'font-size:9px; text-align:right; float:right;'>";
+		strBuffer+="<div col-12 style = 'font-size:9px; text-align:right; float:right;'>";
+		strBuffer+="<span style ='float:right; font-size:9px; text-align:right;' >"+t+"</span></div></div></div>";
+		 $("#chatbox").append(strBuffer)	
 
 		  var chatAreaHeight = $("#message").height();
 		  var maxScroll = $("#message").height() - chatAreaHeight;
